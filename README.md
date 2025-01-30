@@ -8,3 +8,4 @@ e salve os salarios calculados com os descontos em uma nova tabela pessoa_salari
 * O Desafio proposto utilizava o JSF como implementação no entanto o mesmo foi implementado utilizando o Java SE 1.8
 * Foi utilizado o a IDE Eclipse para implementação
 * Foi utilizado o Banco de dados o PostgreSQL versão 17
+* Os arquivos com extensão .CSV que serão importados para as tabelas estão no diretorio Banco de dados/ Arquivos de dados
