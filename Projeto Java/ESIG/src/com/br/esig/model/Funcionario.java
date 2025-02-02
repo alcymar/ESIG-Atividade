@@ -62,5 +62,6 @@ public class Funcionario {
 		this.tipo = tipo;
 	}
 	
+	
 
 }

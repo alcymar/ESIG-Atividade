@@ -23,8 +23,14 @@ public class Visual {
 	private final String[] titles = {"Nome","Nome_Cargo","Valor","Tipo"};
 
 	public Visual() {
-		DBObject = new Conexao();
 		
+		try {
+	
+			DBObject = new Conexao();
+		
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 		
 		
 
