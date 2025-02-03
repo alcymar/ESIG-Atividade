@@ -10,3 +10,4 @@ e salve os salarios calculados com os descontos em uma nova tabela pessoa_salari
 * Foi utilizado o Banco de dados o PostgreSQL versão 17.
 * Os arquivos com extensão .CSV que serão importados para as tabelas estão no diretorio Banco de dados/ Arquivos de dados.
 * O banco de dados ESIG deve ser criado utilizando a interface grafica do Posgresql / PGAdmin 4, pois o script disponibilizado se refere apenas a criação das tabelas e suas relações.
+* Adicionada estrutura de pastas do projeto inicial utilizando o JSF.
