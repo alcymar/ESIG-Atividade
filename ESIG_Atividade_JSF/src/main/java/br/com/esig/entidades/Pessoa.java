@@ -11,45 +11,40 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@org.hibernate.annotations.Entity
-@Entity
-@Table(name = "Pessoa")
+
 public class Pessoa implements Serializable{
 	private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
 
-    @Column(name = "Nome", length = 50, nullable = false)
+
     private String nome;
 
-    @Column(name = "Cidade", length = 50, nullable = false)
+
     private String cidade;
 
-    @Column(name = "Email", length = 50)
+
     private String email;
 
-    @Column(name = "CEP", length = 50)
+
     private String cep;
 
-    @Column(name = "Endereco", length = 100)
+
     private String endereco;
 
-    @Column(name = "Pais", length = 50)
+
     private String pais;
 
-    @Column(name = "Usuario", length = 30)
+
     private String usuario;
 
-    @Column(name = "Telefone", length = 50)
+
     private String telefone;
 
-    @Column(name = "Data_Nascimento")
+
     private java.time.LocalDateTime dataNascimento;
 
-    @ManyToOne
-    @JoinColumn(name = "Cargo_ID", referencedColumnName = "ID")
     private Cargo cargo;
 
     // Getters and Setters

@@ -4,14 +4,18 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Objects;
 
+import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 
 @Entity
 @Table(name = "pessoa_salario_consolidado_jsf")
+
 public class Pessoa_Salario_Consolidado_JSF{
 	
     @Id

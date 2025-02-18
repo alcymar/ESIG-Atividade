@@ -3,24 +3,27 @@ package br.com.esig.entidades;
 
 import java.io.Serializable;
 import java.math.BigInteger;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Immutable;
 
-@Immutable
+
 @Entity
-@Table(name = "view_pessoa_salario_consolidado")
 public class Pessoa_Vencimento implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private BigInteger id; // Adicionando o ID como chave primária
 	
-    private String Nome;
+	private String Nome;
     
     private String Nome_Cargo;
 
@@ -69,6 +72,22 @@ public class Pessoa_Vencimento implements Serializable{
 		this.Valor = valor;
 		this.Tipo = tipo;
 	}
+	
+	 @Override
+		public int hashCode() {
+			return Objects.hash(id);
+		}
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Pessoa_Vencimento other = (Pessoa_Vencimento) obj;
+			return Objects.equals(id, other.id);
+		}
 
 	
 	

@@ -12,9 +12,27 @@
 
 <h:body>
     <h:graphicImage width="4%"  height="4%"   value = "resources/icones/logo.jpg"/>
+    <br></br>
+    <h:form id="Record">
+    ID:
+	<h:inputText size="1" value="#{bean.pessoaSalarioOBJ.id}"/>
+	Nome:
+	<h:inputText size="11" value="#{bean.pessoaSalarioOBJ.nome}"/>
+	Cargo:
+	<h:inputText size="7" value="#{bean.pessoaSalarioOBJ.cargo}"/>
+	Salário:
+	<h:inputText size="1" value="#{bean.pessoaSalarioOBJ.salario}"/>
+	<br></br>
+	<br></br>
+	
+	<h:commandButton value="Calcular" action="#{bean.getData}"/>
+	<h:commandButton value="Salvar" action="#{bean.salvar}"/>
+	<h:commandButton value="Excluir" action="#{bean.excluir}"/>
+	
+	</h:form>
 	<h3>Vencimentos</h3>
 
-	<div style="overflow-y: scroll; width: 25%; height: 350px; text-align: center" >
+	<div style="overflow-y: scroll; width: 25%; height: 335px; text-align: center;  border: 1px solid;" >
 
 
 		<h:form>
@@ -48,7 +66,7 @@
 	
 	<h3>Proventos</h3>
 	
-	<div style="overflow-y: scroll; width: 25%; height: 300px; text-align: center" >
+	<div style="overflow-y: scroll; width: 25%; height: 300px; text-align: center;  border: 1px solid;" >
 	
 	<h:form>
 		<h:dataTable id="proventData" value="#{bean.listaProventos}"
@@ -74,6 +92,9 @@
 		</h:dataTable>
 	</h:form>
 	</div>
+	<br>
+	</br>
+
 
 </h:body>
 

@@ -10,22 +10,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@org.hibernate.annotations.Entity
-@Entity
-@Table(name = "Cargo_Vencimentos")
+
 public class Cargo_Vencimentos implements Serializable{
 	private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "Cargo_ID", referencedColumnName = "ID")
     private Cargo cargo;
 
-    @ManyToOne
-    @JoinColumn(name = "Vencimento_ID", referencedColumnName = "ID")
     private Vencimentos vencimento;
 
     // Getters and Setters

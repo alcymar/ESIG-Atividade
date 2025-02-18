@@ -9,10 +9,6 @@
 	<provider>org.hibernate.ejb.HibernatePersistence</provider>
 	<class>br.com.esig.entidades.Pessoa_Salario_Consolidado_JSF</class>
 	<class>br.com.esig.entidades.Pessoa_Vencimento</class>
-		<class>br.com.esig.entidades.Cargo</class>
-		<class>br.com.esig.entidades.Cargo_Vencimentos</class>
-		<class>br.com.esig.entidades.Pessoa</class>
-	    <class>br.com.esig.entidades.Vencimentos</class>
 	
 	<properties>
 	<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/ESIG"/>

@@ -15,8 +15,8 @@ import br.com.esig.DAO.DAO;
 import br.com.esig.entidades.Pessoa_Vencimento;
 import br.com.esig.entidades.Pessoa_Salario_Consolidado_JSF;
 
-@ManagedBean(name = "bean")
 @ViewScoped
+@ManagedBean(name = "bean")
 public class Bean {
 	
 	private List<Pessoa_Vencimento> listaVencimentos = new ArrayList<Pessoa_Vencimento>();
@@ -27,11 +27,21 @@ public class Bean {
 	private DAO<Pessoa_Salario_Consolidado_JSF> daoProventos = new DAO<Pessoa_Salario_Consolidado_JSF>();
 	
 	
+
 	public List<Pessoa_Vencimento> getListaVencimentos(){
 		listaVencimentos = daoVencimentos.getVencDataList(Pessoa_Vencimento.class);
 		return listaVencimentos;
 	}
 	
+	public String getData() {
+		calcular();
+		salvarlistaProventos();
+		listaProventos = null;
+		listaVencimentos = null;
+		return "";
+	}
+	
+	@PostConstruct
 	public List<Pessoa_Salario_Consolidado_JSF> getListaProventos() {
 		listaProventos = daoProventos.getDataList(Pessoa_Salario_Consolidado_JSF.class);
 		return listaProventos;
@@ -50,6 +60,7 @@ public class Bean {
 
 	public String salvar() {
 		daoProventos.salvar(pessoaSalarioOBJ);
+		pessoaSalarioOBJ = new Pessoa_Salario_Consolidado_JSF();
 		return "";
 	}
 	
@@ -107,6 +118,14 @@ public class Bean {
 		}
 		return "";
 	}
+	
+	public String excluir() {
+		daoProventos.excluirPorId(pessoaSalarioOBJ);
+		return " ";
+	}
+	
+	
+
 	
 	
 

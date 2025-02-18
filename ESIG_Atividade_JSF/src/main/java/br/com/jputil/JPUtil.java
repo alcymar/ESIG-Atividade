@@ -18,5 +18,9 @@ public class JPUtil {
 		return factory.createEntityManager();
 	}
 	
+	public static Object getPK(Object entidade) {
+		return factory.getPersistenceUnitUtil().getIdentifier(entidade);
+	}
+	
 
 }

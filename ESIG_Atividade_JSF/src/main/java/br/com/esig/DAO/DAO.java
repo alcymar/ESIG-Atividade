@@ -18,14 +18,11 @@ import br.com.esig.entidades.Pessoa_Vencimento;
 import br.com.esig.entidades.Pessoa_Salario_Consolidado_JSF;
 import br.com.jputil.JPUtil;
 
-@RequestScoped
+
 public class DAO<E> {
 
 	
-	@PersistenceContext
-	private EntityManager entityManager; 
-	
-	
+
 	public void salvarLista(List<Pessoa_Salario_Consolidado_JSF> entidades) {  // Saida -> Pessoa_Salario_consolidado
 	    EntityManager entityManager = JPUtil.getEntityManager();
 	    EntityTransaction entityTransaction = entityManager.getTransaction();
@@ -51,7 +48,7 @@ public class DAO<E> {
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		entityTransaction.begin();
 
-		entityManager.persist(entidade);
+		entityManager.merge(entidade);
 		entityTransaction.commit();
 		entityManager.close();	
 	}
@@ -102,5 +99,22 @@ public class DAO<E> {
 		entityManager.close();
 		return resultData;	
 	}
+	
+	public void excluirPorId(E entidade) {  // Saida -> Pessoa_Salario_consolidado
+		EntityManager entityManager = JPUtil.getEntityManager();
+		EntityTransaction entityTransaction = entityManager.getTransaction();
+		entityTransaction.begin();
+
+		
+		Object pk = JPUtil.getPK(entidade);		
+		entityManager.createNativeQuery("delete from pessoa_salario_consolidado_jsf where id = "+pk).executeUpdate();
+		
+		entityTransaction.commit();
+		entityManager.close();	
+	}
+	
+	
+	
+	
 
 }
